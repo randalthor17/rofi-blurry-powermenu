@@ -50,15 +50,15 @@ rm -f "${screenshot}.jpg" && rm -f "${screenshot}.png"
 
 # Get dimensions of the current display using `xdisplayinfo`, calling
 # once with option `--all` and then parsing it for further optimization.
-displayinfo=$(xdisplayinfo --all)
-x="$(echo "$displayinfo" | grep "offset-x" | cut -d" " -f2-)"
-y="$(echo "$displayinfo" | grep "offset-y" | cut -d" " -f2-)"
-width="$(echo "$displayinfo" | grep "width" | cut -d" " -f2-)"
-height="$(echo "$displayinfo" | grep "height" | cut -d" " -f2-)"
+# displayinfo=$(xdisplayinfo --all)
+# x="$(echo "$displayinfo" | grep "offset-x" | cut -d" " -f2-)"
+# y="$(echo "$displayinfo" | grep "offset-y" | cut -d" " -f2-)"
+# width="$(echo "$displayinfo" | grep "width" | cut -d" " -f2-)"
+# height="$(echo "$displayinfo" | grep "height" | cut -d" " -f2-)"
 
 # Take screenshot
-scrot -a "${x},${y},${width},${height}" "${screenshot}.jpg"
-
+# scrot -a "${x},${y},${width},${height}" "${screenshot}.jpg"
+flameshot full -p "${screenshot}.jpg"
 # Simulate blur effect
 convert "${screenshot}.jpg" -scale 2.5% -resize 4000% "${screenshot}.jpg"
 
