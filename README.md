@@ -16,7 +16,7 @@ A simple yet beautiful powermenu made with [Rofi](https://github.com/davatorium/
 
 Clone this repo in your `rofi` config folder
 ```bash
-git clone https://github.com/lu0/rofi-blurry-powermenu.git ~/.config/rofi/blurry-powermenu
+git clone https://github.com/randalthor17/rofi-blurry-powermenu.git ~/.config/rofi/blurry-powermenu
 ```
 
 Link the script to your PATH
