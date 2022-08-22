@@ -82,18 +82,18 @@ selected="$(echo -e "$options" |
 
 case $selected in
     "${poweroff}")
-        systemctl poweroff
+        loginctl poweroff
         ;;
     "${reboot}")
-        systemctl reboot
+        loginctl reboot
         ;;
     "${sleep}")
-        systemctl suspend
+        loginctl suspend
         ;;
     "${logout}")
-        cinnamon-session-quit --logout --no-prompt || ( xfce4-session-logout --logout || mate-session-save --logout )
+        loginctl terminate-session self
         ;;
     "${lock}")
-        cinnamon-screensaver-command --lock || ( xflock4 || mate-screensaver-command -l )
+        loginctl lock-session self
         ;;
 esac
